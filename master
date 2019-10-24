@@ -1,8 +1,6 @@
 import requests
 import re
 import time
-import numpy as np
-import matplotlib.pyplot as plt
 while 1:
     wangzhi='http://www.whalebj.com/xzjc/default.aspx'
     file_context=requests.get(wangzhi)
