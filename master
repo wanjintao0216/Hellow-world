@@ -1,0 +1,13 @@
+import requests
+import re
+import time
+import numpy as np
+import matplotlib.pyplot as plt
+while 1:
+    wangzhi='http://www.whalebj.com/xzjc/default.aspx'
+    file_context=requests.get(wangzhi)
+    pattern=re.compile(r'截止目前为止（(.*?)）.*?场内待运车辆数为：([0-9]*) 辆[(](.*?)[)]；.*?前半小时进场车辆数为：([0-9]*) 辆；.*?前半小时离场车辆数为：([0-9]*) 辆',re.S)
+    items = pattern.findall(file_context.text)
+    for item in items:
+        print(item)
+    time.sleep(10)
